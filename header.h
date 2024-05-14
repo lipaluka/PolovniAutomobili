@@ -10,7 +10,11 @@ int adminPrijava(admin);
 int izborAdmin();
 void izborKorisnik();
 int krajPrograma();
-void readString(char* prompt, char* buffer, int size);
+void pregledAutomobila();
+void dodajAuto();
+void obrisiAuto();
+void urediAuto();
+void pretraziAute();
 
 typedef struct {
 	int id;

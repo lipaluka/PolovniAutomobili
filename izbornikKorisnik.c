@@ -23,6 +23,12 @@ void izborKorisnik() {
 		return izborKorisnik();
 	}
 	switch (izbor) {
+	case 1:
+		pregledAutomobila();
+		break;
+	case 2:
+		pretraziAute();
+		break;
 	case 13:
 		izbor = krajPrograma();
 		if (izbor == 0) {
