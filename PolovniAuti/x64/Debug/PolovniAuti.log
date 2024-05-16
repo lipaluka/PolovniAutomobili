@@ -4,9 +4,9 @@
   izbornikPocetni.c
   main.c
   Generating Code...
-C:\Users\Luka\source\repos\PolovniAuti\funkcije.c(125,17): warning C4098: 'obrisiAuto': 'void' function returning a value
-C:\Users\Luka\source\repos\PolovniAuti\funkcije.c(132,17): warning C4098: 'obrisiAuto': 'void' function returning a value
-C:\Users\Luka\source\repos\PolovniAuti\izbornikAdmin.c(47,8): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
-C:\Users\Luka\source\repos\PolovniAuti\izbornikKorisnik.c(23,25): warning C4098: 'izborKorisnik': 'void' function returning a value
-C:\Users\Luka\source\repos\PolovniAuti\izbornikAdmin.c(75,1): warning C4715: 'izborAdmin': not all control paths return a value
-  PolovniAuti.vcxproj -> C:\Users\Luka\source\repos\PolovniAuti\x64\Debug\PolovniAuti.exe
+C:\Users\PC6\source\repos\lipaluka\PolovniAutomobili\izbornikAdmin.c(75): warning C4715: 'izborAdmin': not all control paths return a value
+C:\Users\PC6\source\repos\lipaluka\PolovniAutomobili\funkcije.c(125,17): warning C4098: 'obrisiAuto': 'void' function returning a value
+C:\Users\PC6\source\repos\lipaluka\PolovniAutomobili\funkcije.c(132,17): warning C4098: 'obrisiAuto': 'void' function returning a value
+C:\Users\PC6\source\repos\lipaluka\PolovniAutomobili\izbornikAdmin.c(47,8): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
+C:\Users\PC6\source\repos\lipaluka\PolovniAutomobili\izbornikKorisnik.c(21,25): warning C4098: 'izborKorisnik': 'void' function returning a value
+  PolovniAuti.vcxproj -> C:\Users\PC6\Source\Repos\lipaluka\PolovniAutomobili\x64\Debug\PolovniAuti.exe

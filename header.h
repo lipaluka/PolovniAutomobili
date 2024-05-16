@@ -5,17 +5,6 @@
 #include<time.h>
 #include<conio.h>
 
-void izborGlavni();
-int adminPrijava(admin);
-int izborAdmin();
-void izborKorisnik();
-int krajPrograma();
-void pregledAutomobila();
-void dodajAuto();
-void obrisiAuto();
-void urediAuto();
-void pretraziAute();
-
 typedef struct {
 	int id;
 	char marka[20];
@@ -30,7 +19,28 @@ typedef struct {
 	int godiste;
 }AUTO;
 
+
 typedef struct {
 	char ime[20];
 	char lozinka[20];
 }ADMIN;
+
+void izborGlavni();
+int adminPrijava(admin);
+int izborAdmin();
+void izborKorisnik();
+int krajPrograma();
+void pregledAutomobila();
+void dodajAuto();
+void obrisiAuto();
+void urediAuto();
+void pretraziAute();
+void scanAuto(AUTO** mobil, int* broj);
+void printAuto(const AUTO* mobil, int broj);
+int usporediKilometrazuUzlazno(const void* a, const void* b);
+void sortirajKilometrazaUzlazno(AUTO* mobil, int broj);
+int usporediKilometrazuSilazno(const void* a, const void* b);
+void sortirajKilometrazuSilazno(AUTO* mobil, int broj);
+
+
+

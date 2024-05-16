@@ -358,3 +358,54 @@ void pretraziAute() {
 
     fclose(auti);
 }
+
+void scanAuto(AUTO** mobil, int* broj) {
+    FILE* auti = fopen("auti.txt", "r");
+    if (auti == NULL) {
+        perror("Greska pri otvaranju datoteke");
+        return;
+    }
+
+    AUTO temp;
+    *broj = 0;
+    while (fscanf(auti, "%d\n%19s\n%19s\n%14s\n%9s\n%14s\n%14s\n%d\n%d\n%d\n%d\n",
+        &temp.id, temp.marka, temp.model, temp.karoserija, temp.pogon,
+        temp.motor, temp.boja, &temp.konji, &temp.newtonm, &temp.kilometraza, &temp.godiste) == 11) {
+        (*broj)++;
+    }
+    rewind(auti);
+
+    *mobil = (AUTO*)malloc(*broj * sizeof(AUTO));
+    for (int i = 0; i < *broj; i++) {
+        fscanf(auti, "%d\n%19s\n%19s\n%14s\n%9s\n%14s\n%14s\n%d\n%d\n%d\n%d\n",
+            &(*mobil)[i].id, (*mobil)[i].marka, (*mobil)[i].model,
+            (*mobil)[i].karoserija, (*mobil)[i].pogon, (*mobil)[i].motor,
+            (*mobil)[i].boja, &(*mobil)[i].konji, &(*mobil)[i].newtonm,
+            &(*mobil)[i].kilometraza, &(*mobil)[i].godiste);
+    }
+
+    fclose(auti);
+}
+
+void printAuto(const AUTO* mobil, int broj) {
+    for (int i = 0; i < broj; i++) {
+        printf("ID: %d\nMarka: %s\nModel: %s\nKaroserija: %s\nPogon: %s\nMotor: %s\nBoja: %s\nKonji: %d\nNewtonm: %d\nKilometraza: %d\nGodiste: %d\n\n",
+            mobil[i].id, mobil[i].marka, mobil[i].model, mobil[i].karoserija,
+            mobil[i].pogon, mobil[i].motor, mobil[i].boja, mobil[i].konji,
+            mobil[i].newtonm, mobil[i].kilometraza, mobil[i].godiste);
+    }
+}
+
+int usporediKilometrazuUzlazno(const void* a, const void* b) {
+    return ((AUTO*)a)->kilometraza - ((AUTO*)b)->kilometraza;
+}
+void sortirajKilometrazaUzlazno(AUTO* mobil, int broj) {
+    qsort(mobil, broj, sizeof(AUTO), usporediKilometrazuUzlazno);
+}
+
+int usporediKilometrazuSilazno(const void* a, const void* b) {
+    return ((AUTO*)b)->kilometraza - ((AUTO*)a)->kilometraza;
+}
+void sortirajKilometrazuSilazno(AUTO* mobil, int broj) {
+    qsort(mobil, broj, sizeof(AUTO), usporediKilometrazuSilazno);
+}
